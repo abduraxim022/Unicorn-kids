@@ -1,9 +1,14 @@
 "use client"
 import { createContext, useState, useContext, useEffect } from "react";
 
-const ThemeContext = createContext();
+type ThemeContextType = {
+  theme: string;
+  toggleTheme: () => void;
+};
 
-export function ThemeProvider({ children }) {
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
+
+export function ThemeProvider({ children }: { children: React.ReactNode }) {
   const [theme, setTheme] = useState("light");
 
   // Brauzer default rejimini tekshirish
@@ -25,4 +30,10 @@ export function ThemeProvider({ children }) {
   );
 }
 
-export const useTheme = () => useContext(ThemeContext);
+export const useTheme = (): ThemeContextType => {
+  const context = useContext(ThemeContext);
+  if (context === undefined) {
+    throw new Error('useTheme must be used within a ThemeProvider');
+  }
+  return context;
+};
