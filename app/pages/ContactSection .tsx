@@ -1,16 +1,17 @@
 "use client"
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import React from "react";
 import { useState } from "react";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
 
-  const handleChange = (e:any) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+};
 
-  const handleSubmit = (e:any) => {
+  const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     console.log("Form Data:", formData);
     alert("Thank you for contacting us!");
