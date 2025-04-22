@@ -5,39 +5,60 @@ import { FaChevronDown } from "react-icons/fa";
 
 const faqData = [
   {
-    question: "Can I Track My Assignments and Grades?",
-    answer:
-      "Yes, the LMS offers a 'Gradebook' where students can view their grades, monitor feedback on assignments, and check upcoming due dates. Instructors can also post grades and comments for each submission.",
+    question: "Topshiriqlarim va baholarimni kuzata olishim mumkinmi?",
+    answer: `✅ Albatta! Har bir o‘quvchi va ota-ona unicornschool.uz platformasidagi shaxsiy kabinet orqali:
+
+📝 Barcha uyga vazifalarni ko‘rish va topshirish
+
+📊 O‘quvchining baholari va progressini kuzatish
+
+📅 Dars davomati (qatnashgan/qatnashmagan kunlari)
+
+💰 To‘lovlar tarixi haqida ma‘lumot olish
+
+⚠️ Qo‘shimcha: Ota-onalar uchun maxsus mobil ilova orqali bolangizning barcha faoliyati haqida bildirishnomalar olish mumkin!`
   },
   {
-    question: "Does the LMS support video lessons and live classes?",
-    answer:
-      "Absolutely! Our platform supports both pre-recorded and live video lessons for an interactive learning experience.",
+    question: "Kompyuter bo‘lishi shartmi?",
+    answer: "✅ Ha, shaxsiy kompyuter (noutbuk yoki monoblok) bo‘lishi tavsiya etiladi. Agar hozircha kompyuteringiz bo‘lmasa, biz 1 oy muddatga darslarda foydalanish uchun ijaraga monoblok berishimiz mumkin. Biroq, uyda mashq qilish uchun o‘zingizning qurilmangiz bo‘lishi yaxshiroq!"
   },
   {
-    question: "How can I communicate with my instructor?",
-    answer:
-      "Students can communicate with instructors via in-platform messaging, discussion boards, and scheduled virtual meetings.",
+    question: "Bir guruhda nechta o‘quvchi bo‘ladi?",
+    answer: "📚 Har bir guruhda 12-15 ta o‘quvchi bo‘ladi. Bu bizga har bir bolaga individual yondashish imkonini beradi."
   },
   {
-    question: "What support is available for students and instructors?",
-    answer:
-      "We provide 24/7 technical support, a comprehensive knowledge base, and community forums for both students and instructors.",
+    question: "Darslar qaysi tillarda o‘tiladi?",
+    answer: "🗣️ Darslar o‘zbek va rus tillaridagi alohida guruhlarda olib boriladi. Ota-onalar bolasi uchun qulay tilni tanlashi mumkin."
   },
   {
-    question: "Are there interactive features for students?",
-    answer:
-      "Yes, students can participate in quizzes, polls, and interactive discussions to enhance their learning journey.",
+    question: "Kursga yozilish uchun qanday hujjatlar kerak?",
+    answer: `📄 Bepul ochiq darsda qatnashib ko‘rish (birinchi dars bepul!). Keyin:
+
+    Ota-ona va Unicorn shartnoma imzolaydi (bola 18 yoshdan kichik bo‘lgani uchun).
+    
+    Ota-ona passport nusxasi kerak bo‘ladi
+    `
   },
+  {
+    question: "Saytda o‘quvchilar uchun qo‘shimcha imkoniyatlar bormi?",
+    answer: `💻 Ha! Har bir o‘quvchining unicornschool.uz saytida shaxsiy kabineti mavjud. Unda:
+
+    Barcha uyga vazifalar va materiallar joylashgan.
+
+    Topshiriqlarni onlayn topshirish mumkin.
+
+    Ota-onalar bolaning progressini real vaqtda ko‘rishlari mumkin.
+    `
+  }
 ];
 
 export default function FAQ() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
-
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  
   const toggle = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-
+  
   return (
     <section className="container mx-auto px-4 py-20">
       <motion.div
@@ -48,14 +69,14 @@ export default function FAQ() {
         className="text-center"
       >
         <h2 className="text-4xl font-semibold text-gray-900 mb-4">
-          Frequently Asked Questions
+          Tez-tez so‘raladigan savollar
         </h2>
         <p className="text-gray-600 mb-10">
-          Frequently Asked Questions offers quick answers to common queries,
-          guiding users through features and functionalities effortlessly.
+          Tez-tez so‘raladigan savollar umumiy so‘rovlarga tezkor javoblarni taklif qiladi va
+          foydalanuvchilarni xususiyat va funksiyalar bo‘yicha osonlikcha yo‘naltiradi.
         </p>
       </motion.div>
-
+      
       <div className="space-y-4">
         {faqData.map((item, index) => (
           <motion.div
@@ -65,7 +86,7 @@ export default function FAQ() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             className={`bg-white shadow-md p-4 rounded-lg cursor-pointer ${
-              openIndex === index && "shadow-lg"
+              openIndex === index ? "shadow-lg" : ""
             }`}
             onClick={() => toggle(index)}
           >
@@ -84,14 +105,15 @@ export default function FAQ() {
               />
             </div>
             {openIndex === index && (
-              <motion.p
+              <motion.div
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
-                className="mt-2 text-gray-600"
+                transition={{duration:0.5,ease:"easeOut"}}
+                className="mt-2 text-gray-600 whitespace-pre-line"
               >
                 {item.answer}
-              </motion.p>
+              </motion.div>
             )}
           </motion.div>
         ))}

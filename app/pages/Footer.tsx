@@ -15,7 +15,7 @@ export default function Footer() {
       >
         {/* Logo Section */}
         <div>
-          <h2 className="text-2xl font-bold text-gray-900 mb-2">🟢 MonksHub</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">Unicorn Kids  </h2>
           <p className="text-gray-600">Unlock knowledge with expert-led online courses.</p>
           <h3 className="font-semibold mt-4">Stay connected</h3>
           <div className="flex space-x-4 mt-2">
@@ -38,9 +38,7 @@ export default function Footer() {
         <div>
           <h3 className="font-semibold text-gray-900 mb-2">Pages</h3>
           <ul className="space-y-2 text-gray-700">
-            <li><a href="#home" className="hover:text-gray-900 transition">Home 1</a></li>
-            <li><a href="#home2" className="hover:text-gray-900 transition">Home 2</a></li>
-            <li><a href="#home3" className="hover:text-gray-900 transition">Home 3</a></li>
+            <li><a href="#home" className="hover:text-gray-900 transition">Home</a></li>
             <li><a href="#about" className="hover:text-gray-900 transition">About Us</a></li>
             <li><a href="#courses" className="hover:text-gray-900 transition">Courses</a></li>
           </ul>
@@ -51,10 +49,6 @@ export default function Footer() {
           <h3 className="font-semibold text-gray-900 mb-2">Others</h3>
           <ul className="space-y-2 text-gray-700">
             <li><a href="#mentors" className="hover:text-gray-900 transition">Mentors</a></li>
-            <li><a href="#blog" className="hover:text-gray-900 transition">Blog</a></li>
-            <li><a href="#404" className="hover:text-gray-900 transition">404</a></li>
-            <li><a href="#privacy" className="hover:text-gray-900 transition">Privacy Policy</a></li>
-            <li><a href="#terms" className="hover:text-gray-900 transition">Terms & Conditions</a></li>
           </ul>
         </div>
 
@@ -64,15 +58,15 @@ export default function Footer() {
           <ul className="space-y-3 text-gray-700">
             <li className="flex items-center space-x-2">
               <MdPhone className="text-gray-900" />
-              <span>+8801798155521</span>
+              <span>+998 98 113 9559</span>
             </li>
             <li className="flex items-center space-x-2">
               <MdEmail className="text-gray-900" />
-              <span>hello@designmonks.co</span>
+              <span>unicorn@gmail.com</span>
             </li>
             <li className="flex items-center space-x-2">
               <MdLocationOn className="text-gray-900" />
-              <span>4886 Stroman Dr, South Stanton, USA</span>
+              <span>Mirzo Ulug‘bek tumani , Mirzo ulug‘bek ko‘chasi 54/2  </span>
             </li>
           </ul>
         </div>
@@ -80,7 +74,7 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="text-center mt-6 text-gray-600">
-        © {new Date().getFullYear()} MonksHub. All rights reserved.
+        © {new Date().getFullYear()} Unicorn. All rights reserved.
       </div>
     </footer>
   );
