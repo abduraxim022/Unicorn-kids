@@ -1,5 +1,5 @@
 "use client"
-import { useState, useEffect, useRef, JSX } from "react";
+import { useState, useEffect, useRef, JSX, useMemo } from "react";
 import { Button } from "@/components/ui/button"; 
 import { motion } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
@@ -19,7 +19,7 @@ export default function Navbar(): JSX.Element {
   const indicatorRef = useRef<HTMLSpanElement | null>(null);
   const navRef = useRef<HTMLDivElement | null>(null);
   
-  const sections: SectionId[] = ["home", "courses", "mentors", "about", "contact"];
+  const sections: SectionId[] = useMemo(() => ["home", "courses", "mentors", "about", "contact"], []);
   
   useEffect(() => {
     const handleScroll = (): void => {

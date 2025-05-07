@@ -7,8 +7,8 @@ import FAQ from './pages/Faq'
 import MarqueeDemo from '@/components/marquee'
 import SkillsMasterySection from './pages/FeaturesSection'
 import TeamShowcase from './pages/Teachers'
-import TestimonialSection from './pages/Teachercomment'
 import SubscriptionBanner from './pages/SubscriptionBanner'
+import Unicourse from './pages/Unicourse'
 
 const Home = () => {
   return (
@@ -16,10 +16,10 @@ const Home = () => {
       <Navbar/>
       <HeroSection/>
       <MarqueeDemo/>
+      <Unicourse/>
       <SkillsMasterySection/>
       <CoursesSection/>
       <TeamShowcase/>
-      <TestimonialSection/>
       <FAQ/>
       <SubscriptionBanner/>
       <Footer/>

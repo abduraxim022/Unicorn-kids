@@ -3,6 +3,10 @@ import { motion } from "framer-motion";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Clock, FileText, User } from "lucide-react";
+import Image from "next/image";
+import alpha from '../../public/alpha.jpg'
+import beta from '../../public/beta.jpg'
+import delta from '../../public/delta.jpg'
 
 const courses = [
   {
@@ -13,7 +17,7 @@ const courses = [
     lectures: "48 ta ma'ruza",
     instructor: "Abdugafforov M.",
     price: "1 400 000 so'm",
-    image: "/java-foundation.png",
+    image: alpha,
     color: "bg-blue-200"
   },
   {
@@ -24,7 +28,7 @@ const courses = [
     lectures: "48",
     instructor: "Giyosov R.",
     price: "1 400 000 so'm",
-    image: "/python-foundation.png",
+    image: beta,
     color: "bg-blue-100"
   },
   {
@@ -35,7 +39,7 @@ const courses = [
     lectures: "48 ta ma'ruza",
     instructor: "Rasulmatov M.",
     price: "1 400 000 so'm",
-    image: "/js-foundation.png",
+    image: delta,
     color: "bg-teal-100"
   },
 ];
@@ -43,7 +47,7 @@ const courses = [
 
 export default function PopularCoursesSection() {
   return (
-    <section id="courses" className="py-16">
+    <section id="courses" className="py-8">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -69,35 +73,17 @@ export default function PopularCoursesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.2 + (index * 0.1) }}
             >
-              <Card className="overflow-hidden border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-                <div className={`${course.color} p-6 flex items-center justify-center h-64 relative`}>
-                  {/* 3D Illustration Placeholder */}
-                  <div className="w-48 h-48 bg-white/20 rounded flex items-center justify-center">
-                    {index === 0 ? (
-                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#ff6b6b" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M3 15V8h18v7"></path>
-                        <path d="M12 12v6"></path>
-                        <path d="M8 18h8"></path>
-                        <rect x="7" y="3" width="10" height="5"></rect>
-                      </svg>
-                    ) : index === 1 ? (
-                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#4cabdb" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M12 9v6m3-3H9"></path>
-                        <circle cx="12" cy="12" r="10"></circle>
-                      </svg>
-                    ) : (
-                      <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#ffc107" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                        <path d="M20 4v12A4 4 0 0 1 16 20H8a4 4 0 0 1-4-4V4"></path>
-                        <polyline points="12 12 12 8"></polyline>
-                        <line x1="12" y1="16" x2="12.01" y2="16"></line>
-                      </svg>
-                    )}
-                  </div>
+              <Card className="p-0 rounded-[8px]">
+                    <Image
+                      src={course.image}
+                      alt={course.title}
+                      className=" w-full h-full object-contain  rounded-[8px]"
+                      priority={index === 0}
+                    />
                   <Badge className="absolute top-4 right-4 bg-white text-gray-700 hover:bg-gray-100">
                     {course.category}
                   </Badge>
-                </div>
-                <CardContent className="p-4">
+                <CardContent className="">
                   <h3 className="font-bold text-lg mb-3">{course.title}</h3>
                   <div className="flex items-center gap-3 text-sm text-gray-500 mb-3">
                     <div className="flex items-center gap-1">
@@ -118,7 +104,6 @@ export default function PopularCoursesSection() {
                 </CardContent>
                 <CardFooter className="px-4 py-3 border-t border-gray-100 flex justify-between items-center">
                   <span className="font-bold text-pink-500">{course.price}</span>
-           
                 </CardFooter>
               </Card>
             </motion.div>

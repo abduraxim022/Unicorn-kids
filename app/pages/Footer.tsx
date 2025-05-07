@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaLinkedinIn,FaTelegram } from "react-icons/fa";
 import { MdLocationOn, MdEmail, MdPhone } from "react-icons/md";
 
 export default function Footer() {
@@ -20,7 +20,7 @@ export default function Footer() {
           <h3 className="font-semibold mt-4">Stay connected</h3>
           <div className="flex space-x-4 mt-2">
             <a href="#" className="p-3 bg-white shadow-lg rounded-full hover:scale-110 transition">
-              <FaTwitter />
+              <FaTelegram />
             </a>
             <a href="#" className="p-3 bg-white shadow-lg rounded-full hover:scale-110 transition">
               <FaFacebookF />

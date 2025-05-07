@@ -20,7 +20,7 @@ const TestimonialSection: React.FC = () => {
       id: 1,
       name: "Brandon Michael",
       role: "UI/UX Designer",
-      image: "/api/placeholder/400/400", 
+      image: "", 
       quote:
         "An exceptional platform for career development! The current curriculum, skilled instructors, and hands-on learning ensure every moment is impactful, enriching, and truly rewarding.",
       rating: 5,
@@ -29,7 +29,7 @@ const TestimonialSection: React.FC = () => {
       id: 2,
       name: "Sarah Johnson",
       role: "Software Developer",
-      image: "/api/placeholder/400/400", 
+      image: "", 
       quote:
         "The courses completely transformed my career path. I went from knowing basics to landing my dream job in just 6 months. The community support is incredible!",
       rating: 5,
@@ -38,7 +38,7 @@ const TestimonialSection: React.FC = () => {
       id: 3,
       name: "Alex Wong",
       role: "Data Analyst",
-      image: "/api/placeholder/400/400", 
+      image: "", 
       quote:
         "What sets these courses apart is the real-world projects. I gained practical experience that I could immediately add to my portfolio and discuss in interviews.",
       rating: 5,
@@ -48,7 +48,7 @@ const TestimonialSection: React.FC = () => {
   const [activeTestimonial, setActiveTestimonial] = React.useState(0);
 
   return (
-    <div className="bg-purple-50 py-16 px-4 md:px-8 lg:px-16">
+    <div id="about" className="bg-purple-50 py-16 px-4 md:px-8 lg:px-16">
       <div className="container mx-auto max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="space-y-8">

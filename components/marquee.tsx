@@ -21,9 +21,9 @@ const MarqueeDemo = () => {
         {technologies.map((tech, index) => (
           <span
             key={index}
-            className="mx-4 text-3xl  font-semibold leading-[40px] text-[rgb(1, 24, 19)]"
+            className="mx-3 text-3xl  font-semibold leading-[40px] text-[rgb(1, 24, 19)]"
           >
-            {tech} <span className="text-[rgb(1, 24, 19)]">✱</span>
+            {tech} <span className="text-[rgb(1, 24, 19)] mx-4">✱</span>
           </span>
         ))}
       </Marquee>
